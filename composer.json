@@ -1,0 +1,9 @@
+{
+    "name": "wee/bakery-backend",
+    "autoload": {
+        "psr-4": {
+            "Wee\\BakeryBackend\\": "src/"
+        }
+    },
+    "require": {}
+}
