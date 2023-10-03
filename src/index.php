@@ -5,9 +5,9 @@ include 'connection.php';
 // user=postgres password=[YOUR-PASSWORD] host=db.khhmaxbegomuwdzkaxpj.supabase.co port=5432 dbname=postgres
 
 try {
-	$dsn = "pgsql:host=$host;port=5432;dbname=$db;";
+	$dsn = "pgsql:host=$host;port=5432;dbname=$db;user=$user;password=$password";
 	// make a database connection
-	$pdo = new PDO($dsn, $user, $password, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+	$pdo = new PDO($dsn);
 
 	if ($pdo) {
 		echo "Connected to the $db database successfully!";
