@@ -34,11 +34,11 @@
        ```
   * If you are using fedora distro as me 
       ```
-          sudo dnf install php-pgsql php-pdo_pgsql php-pdo
+          sudo dnf install php-pgsql
       ```
   * Other common Linux distro
       ```
-          sudo apt-get install php-pgsql php-pdo_pgsql php-pdo
+          sudo apt-get install php-pgsql
       ```
  
 
