@@ -1,4 +1,4 @@
-# Try Out Supbase DataBase using PHP & PDO
+# Try Out [Supabase] (https://supabase.com/) DataBase using PHP & PDO
 
 ## Setup Connection 
    * Create a config file for the connection `filename.php`
@@ -12,7 +12,7 @@
         ```
            $dsn = "pgsql:host=$host;port=5432;dbname=$dbname;user=$username;password=$password";
         ``` 
-     - Try and catch your connnection:
+     - Try and catch your connection:
         ```
            try {
               $pdo = new PDO($dsn);
@@ -22,7 +22,7 @@
                 exit;
             }
         ```
-## <span color="red"> One of the common error you would be facing is poping up ` Client PDO not found ` We solved this issue by installing database driver and within the PDO.</span>
+## <span color="red"> One of the common errors you would be facing is popping up ` Client PDO not found ` We solved this issue by installing a database driver and within the PDO.</span>
 
 #### Configure your php.ini
    *  First of all navigate to your php.ini file in `/etc/php/8.version/cli/php.ini`
@@ -32,11 +32,11 @@
           extension=pdo_pgsql
           extension=pgsql
        ```
-  * If you are using fedora as me 
+  * If you are using fedora distro as me 
       ```
           sudo dnf install php-pgsql php-pdo_pgsql php-pdo
       ```
-  * Other common linux distor
+  * Other common Linux distro
       ```
           sudo apt-get install php-pgsql php-pdo_pgsql php-pdo
       ```
