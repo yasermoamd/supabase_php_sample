@@ -1,4 +1,4 @@
-# Try Out [Supabase] (https://supabase.com/) DataBase using PHP & PDO
+# Try Out [Supabase](https://supabase.com/) DataBase using PHP & PDO
 
 ## Setup Connection 
    * Create a config file for the connection `filename.php`
