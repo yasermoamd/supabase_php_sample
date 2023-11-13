@@ -64,4 +64,5 @@ ALTER TABLE cake
 RENAME COLUMN description TO product_description;
  
 
-```id,name,email) ://github.com/yasermoamd/) & [Vlad](https://github.com/VladZtn)
+```
+id,name,email) ://github.com/yasermoamd/) & [Vlad](https://github.com/VladZtn)
