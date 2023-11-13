@@ -1,16 +1,14 @@
 <?php 
 
-$host = getenv('DB_HOST'); 
-$dbname = getenv('DB_DATABASE_NAME');
-$username = getenv('DB_USERNAME');
-$password = getenv('DB_PASSWORD');
-$table_name = "breads";
-
-$dsn = "pgsql:host=$host;port=5432;dbname=$dbname;user=$username;password=$password";
+$host = 'localhost'; 
+$dbname = 'bakery';
+$username = 'root';
+$password = '123';
+ 
+$conn = new mysqli($host, $username, $password, $dbname);
 try {
-    $pdo = new PDO($dsn);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
+    $conn = new mysqli($host, $username, $password);
+} catch (Exception $e) {
     echo 'Connection Error: ' . $e->getMessage();
     exit;
 }

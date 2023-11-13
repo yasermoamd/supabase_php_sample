@@ -43,10 +43,25 @@
  
 
 
+## Connection Using Mysqli for Mysql Database
+```
+CREATE TABLE cake (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255),  price decimal(4, 2) NOT NULL, description TEXT, image TEXT, created datetime NOT NULL DEFAULT current_timestamp(), updated datetime NOT NULL DEFAULT current_timestamp());
+
+INSERT INTO cake (name, price, description, image) VALUES("Snowballs (pack of 4)" ,  6.95 , "Delicious buns, coated in icing and coconut and filled with raspberry jam", "https://frenchvillage.com/cdn/shop/files/snowballimage_720x.jpg");
 
 
 
+ALTER TABLE cake 
+RENAME COLUMN id TO product_id;
 
+ALTER TABLE cake 
+RENAME COLUMN name TO product_name;
 
----
-###  Created by [Yaser](https://github.com/yasermoamd/) & [Vlad](https://github.com/VladZtn)
+ALTER TABLE cake 
+RENAME COLUMN price TO product_price;
+
+ALTER TABLE cake 
+RENAME COLUMN description TO product_description;
+ 
+
+```id,name,email) ://github.com/yasermoamd/) & [Vlad](https://github.com/VladZtn)

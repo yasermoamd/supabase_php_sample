@@ -1,10 +1,3 @@
-<?php
-include 'connection.php';
-require_once '../vendor/autoload.php';
-
-$sql = "SELECT * FROM \"$table_name\"";
-$result = $pdo->query($sql);
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,39 +11,43 @@ $result = $pdo->query($sql);
 <body>
 
 <div class="container mt-5">
-    <?php
-    if ($result) {
-        $data = $result->fetchAll(PDO::FETCH_ASSOC);
+<?php
+require_once '../vendor/autoload.php';
 
-        if (!empty($data)) {
-            echo '<table class="table table-bordered table-hover">';
-            echo '<thead class="thead-dark">';
-            echo '<tr>';
-            foreach ($data[0] as $column => $value) {
-                echo '<th>' . $column . '</th>';
-            }
-            echo '</tr>';
-            echo '</thead>';
-            echo '<tbody>';
+$host = 'localhost'; 
+$dbname = 'bakery';
+$username = 'root';
+$password = '123';
+$tbl_name = 'cake';
+ 
+$conn = new mysqli($host, $username, $password, $dbname);
 
-            foreach ($data as $row) {
-                echo '<tr>';
-                foreach ($row as $value) {
-                    echo '<td>' . $value . '</td>';
-                }
-                echo '</tr>';
-            }
-            echo '</tbody>';
-            echo '</table>';
-        } else {
-            echo '<div class="alert alert-warning">There are no data to display.</div>';
-        }
-    } else {
-        echo '<div class="alert alert-danger">Error exception.</div>';
+
+if($conn->connect_errno ) {
+    printf("Connect failed: %s<br />", $conn->connect_error);
+    exit();
+ }
+ printf('Connected successfully.<br />');
+
+ $sql = "SELECT product_id, product_name, product_description,  product_image FROM cake";
+ $result = $conn->query($sql);
+
+   
+ if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        printf("Id: %d, Name: %s, description: %s, image: <img src=%s> <br />",  
+          $row["product_id"], 
+          $row["product_name"], 
+          $row["product_description"],
+          $row["product_image"]);               
     }
-    ?>
-</div>
+ } else {
+    printf('No record found.<br />');
+ }
+ mysqli_free_result($result);
+ $conn->close();
 
+?>
 <!-- Bootstrap JS and jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
