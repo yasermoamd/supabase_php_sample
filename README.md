@@ -62,7 +62,6 @@ RENAME COLUMN price TO product_price;
 
 ALTER TABLE cake 
 RENAME COLUMN description TO product_description;
- 
 
 ```
-id,name,email) ://github.com/yasermoamd/) & [Vlad](https://github.com/VladZtn)
+[Yaser](https://github.com/yasermoamd/) & [Vlad](https://github.com/VladZtn)
