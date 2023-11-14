@@ -1,0 +1,31 @@
+.product_search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.product_search > input  {
+    border: none;
+    color: gray;
+    font-size: 16px;
+    border: 1px solid black;
+
+}
+
+.product_search > input:focus {
+    border: none;
+
+}
+
+.product_search > span {
+    background-color: cadetblue;
+    padding: 5px;
+    font-size: 18px;
+    width: 100px;
+    border-radius: 10px;
+    color: black;
+    text-align: center;
+    cursor: pointer;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}

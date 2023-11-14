@@ -64,23 +64,33 @@ ALTER TABLE cake
 RENAME COLUMN description TO product_description;
 
 ```
+
+
+
+
+
+
+
+#### Login Page
+##### users table
+
+CREATE TABLE IF NOT EXISTS `users` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `username` varchar(50) NOT NULL,
+ `email` varchar(50) NOT NULL,
+ `password` varchar(50) NOT NULL,
+ `trn_date` datetime NOT NULL,
+ PRIMARY KEY (`id`)
+ );
+
+
+
+
+
+
+
+
+
+
+
 Created By [Yaser](https://github.com/yasermoamd/) & [Vlad](https://github.com/VladZtn)
-
-
-
-
-
-
-      echo '<div class="product_item" key={product_id}>
-      <img src="' . $row['product_image'] . '" alt="">
-      <article>
-          <h3 class="product_title">' . $row['product_name'] . '</h3>
-          <span class="description">' . $row['description'] . '</span>
-          <span class="product_price">£ ' . $row['product_price'] . '</span>
-      </article>
-      <div class="btns">
-          <input value="View" type="button" class="view_btn" />
-          <input type="button" class="basket_btn" value="Add To Basket" />
-      </div>
-    </div>';
- 

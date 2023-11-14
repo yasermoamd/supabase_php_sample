@@ -14,23 +14,10 @@
 <div class="container mt-5">
 <?php
 require_once '../vendor/autoload.php';
+include('services/connection.php');
+include('views/navbar.php');
 
-$host = 'localhost'; 
-$dbname = 'bakery';
-$username = 'root';
-$password = '';
-$tbl_name = 'cake';
- 
-$conn = new mysqli($host, $username, $password, $dbname);
-
-
-if($conn->connect_errno ) {
-    printf("Connect failed: %s<br />", $conn->connect_error);
-    exit();
- }
- printf('Connected successfully.<br />');
-
- $sql = "SELECT product_id, product_name, description, product_price,  product_image FROM cake";
+ $sql = "SELECT product_id, product_name, product_description, product_price,  product_image FROM cake";
  $result = $conn->query($sql);
 
  if ($result !== false && $result->num_rows > 0) {
@@ -70,6 +57,7 @@ if($conn->connect_errno ) {
 <!-- Bootstrap JS and jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.2.1/redux.min.js" integrity="sha512-1/8Tj23BRrWnKZXeBruk6wTnsMJbi/lJsk9bsRgVwb6j5q39n0A00gFjbCTaDo5l5XrPVv4DZXftrJExhRF/Ug==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</script>
 </body>
 </html>
