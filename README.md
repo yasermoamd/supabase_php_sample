@@ -65,3 +65,22 @@ RENAME COLUMN description TO product_description;
 
 ```
 Created By [Yaser](https://github.com/yasermoamd/) & [Vlad](https://github.com/VladZtn)
+
+
+
+
+
+
+      echo '<div class="product_item" key={product_id}>
+      <img src="' . $row['product_image'] . '" alt="">
+      <article>
+          <h3 class="product_title">' . $row['product_name'] . '</h3>
+          <span class="description">' . $row['description'] . '</span>
+          <span class="product_price">£ ' . $row['product_price'] . '</span>
+      </article>
+      <div class="btns">
+          <input value="View" type="button" class="view_btn" />
+          <input type="button" class="basket_btn" value="Add To Basket" />
+      </div>
+    </div>';
+ 

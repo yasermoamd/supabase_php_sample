@@ -1,0 +1,62 @@
+ main {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+ }
+
+.section_type {
+    font-family: 'Lato', Helvetica, 'Neue', Helvetica, Arial, sans-serif;
+    display: flex;
+}
+
+.product_item {
+    max-width: 245px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Lato';
+    text-align: center;
+    border: 1px solid #ddd; /* Add a border for better visualization */
+    padding: 10px; /* Add padding for spacing */
+    background-color: #f9f9f9; /* Add a background color for better visualization */
+}
+
+.product_item > .product_description {
+    font-size: 16px;
+    letter-spacing: 4px;
+}
+
+.product_item > img {
+    width: 100%;
+    height: 150px; /* Adjust the height as needed */
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+.product_item > .btns {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 10px; /* Adjust the margin as needed */
+}
+
+.view_btn,
+.basket_btn {
+    width: 100%;
+    font-size: 18px;
+    padding: 15px 20px;
+    text-decoration: none;
+    border: 1px solid #a68f51;
+    margin-top: 15px;
+    display: block;
+    cursor: pointer;
+    box-sizing: border-box; /* Include padding and border in width */
+}
+
+.view_btn {
+    color: #a68f51;
+    background: #ffffff;
+}
+
+.basket_btn {
+    color: #ffffff;
+    background-color: #a68f51;
+}

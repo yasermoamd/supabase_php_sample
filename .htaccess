@@ -1,0 +1,7 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Rewrite rule to redirect requests to index.php
+    RewriteRule ^([^/]+)/([^/]+)$ index.php?product_id=$1&product_name=$2 [L,QSA]
+</IfModule>
