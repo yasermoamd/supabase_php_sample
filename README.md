@@ -29,6 +29,11 @@
 
    * Uncomment out `extension=pdo_pgsql` and `extension=pgsql` inside `/etc/php8.version/cli/php.ini` by removing ; in front of the them:
       ```
+      MYSQL
+          extension=pdo_mysql
+          extension=mysqli
+
+          POSTGRESQL
           extension=pdo_pgsql
           extension=pgsql
        ```
@@ -41,5 +46,23 @@
           sudo apt-get install php-pgsql
       ```
  
+
+
+### install mysql 
+
+  - for windows users
+     - [Windows Mysql](https://dev.mysql.com/downloads/installer/)
+        * installation & setup  guide
+     - [Linux Mysql](https://dev.mysql.com/doc/refman/8.0/en/linux-installation.html)
+        * installation & setup  guide
+
+        database: cakecove
+        username: fushia
+        password: Password123#@!
+
+     - [Mac Mysql](https://dev.mysql.com/doc/mysql-macos-excerpt/8.0/en/macos-installation.html)
+        * installation & setup  guide
+  ## tables:
+     - 
 
 Created By [Yaser](https://github.com/yasermoamd/) & [Vlad](https://github.com/VladZtn)

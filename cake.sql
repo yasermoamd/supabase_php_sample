@@ -27,24 +27,51 @@ SET time_zone = "+00:00";
 -- Table structure for table `cake`
 --
 
-CREATE TABLE `cake` (
-  `product_id` int(11) NOT NULL PRIMARY KEY,
-  `product_name` varchar(255) DEFAULT NULL,
-  `product_price` decimal(4,2) NOT NULL,
-  `description` text DEFAULT NULL,
-  `product_image` text DEFAULT NULL,
-  `created` datetime NOT NULL DEFAULT current_timestamp(),
-  `updated` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE customers (
+    customerID INT AUTO_INCREMENT PRIMARY KEY,
+    firstName VARCHAR(50) NOT NULL,
+    lastName VARCHAR(50) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
 
+CREATE TABLE categories (
+    `categoryID` INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE products (
+    productID INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    price DECIMAL(10, 2) NOT NULL,
+    categoryID INT NOT NULL,
+    FOREIGN KEY (categoryID) REFERENCES categories(categoryID)
+);
+/*The "orders" table stores information about orders made by customers, including the customer's ID, and the date of the order.*/
+CREATE TABLE orders (
+    orderID INT AUTO_INCREMENT PRIMARY KEY,
+    customerID INT NOT NULL,
+    orderDate DATE NOT NULL,
+    FOREIGN KEY (customerID) REFERENCES customers(customerID)
+);
+
+/*The "orderDetails" table stores information about the products included in each order, including the order ID, product ID, and quantity.*/
+CREATE TABLE orderDetails (
+    orderID INT NOT NULL,
+    productID INT NOT NULL,
+    quantity INT NOT NULL,
+    PRIMARY KEY (orderID, productID),
+    FOREIGN KEY (orderID) REFERENCES orders(orderID),
+    FOREIGN KEY (productID) REFERENCES products(productID)
+);
 --
 -- Dumping data for table `cake`
 --
 
-INSERT INTO `cake` (`product_id`, `product_name`, `product_price`, `product_description`, `product_image`, `created`, `updated`) VALUES
-(1, 'Snowballs (pack of 4)', 6.95, 'Delicious buns, coated in icing and coconut and filled with raspberry jam', 'https://frenchvillage.com/cdn/shop/files/snowballimage_720x.jpg', '2023-11-13 22:37:48', '2023-11-13 22:37:48'),
-(2, 'Eton Mess Cake', 50.00, 'Deeee-licious raspberry & white chocolate sponge with marshmallow buttercream layers, 100% real irish jam & white chocolate chunks. ', 'https://frenchvillage.com/cdn/shop/products/etonmess_720x.jpg', '2023-11-13 22:46:41', '2023-11-13 22:46:41'),
-(3, 'Kinder Bueno Cake', 48.50, 'Chocolate cake layered with hazelnut chocolate ganache and encased in a praline buttercream icing. ', 'https://frenchvillage.com/cdn/shop/products/Bueno_720x.jpg', '2023-11-13 22:47:56', '2023-11-13 22:47:56');
+INSERT INTO `products` (`productID`, `name`, `price`, `categoryID`, `description`, `image`) VALUES
+(1, 'Snowballs (pack of 4)', 6.95, 1 ,'Delicious buns, coated in icing and coconut and filled with raspberry jam',  'https://frenchvillage.com/cdn/shop/files/snowballimage_720x.jpg'),
+(2, 'Eton Mess Cake', 50.00, 2 ,'Deeee-licious raspberry & white chocolate sponge with marshmallow buttercream layers, 100% real irish jam & white chocolate chunks. ', 'https://frenchvillage.com/cdn/shop/products/etonmess_720x.jpg'),
+(3, 'Kinder Bueno Cake', 48.50, 1 ,'Chocolate cake layered with hazelnut chocolate ganache and encased in a praline buttercream icing. ', 'https://frenchvillage.com/cdn/shop/products/Bueno_720x.jpg');
 
 --
 -- Indexes for dumped tables

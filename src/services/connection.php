@@ -1,17 +1,17 @@
 <?php 
 
 $host = 'localhost';  // DB HOST
-$dbname = 'bakery';  // DBNAME
-$username = 'root'; // DBUSERNAME
-$password = '123'; // DBPASSWORD  
+$dbname = 'cakecove';  // DBNAME
+$username = 'fushia'; // DBUSERNAME
+$password = 'Password123#@!'; // DBPASSWORD  
 
 /**
  *  connection using mysqli -> php
  */
-$conn = new mysqli($host, $username, $password, $dbname);
- 
+
 try {
-    if($conn->connect_errno ) {
+    $conn = new mysqli($host, $username, $password, $dbname);
+    if($conn->connect_errno) {
         printf("Connect failed: %s<br />", $conn->connect_error);
         exit();
      }
