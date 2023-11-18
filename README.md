@@ -55,14 +55,14 @@
         * installation & setup  guide
      - [Linux Mysql](https://dev.mysql.com/doc/refman/8.0/en/linux-installation.html)
         * installation & setup  guide
-
-        database: cakecove
-        username: fushia
-        password: Password123#@!
-
      - [Mac Mysql](https://dev.mysql.com/doc/mysql-macos-excerpt/8.0/en/macos-installation.html)
         * installation & setup  guide
   ## tables:
      - 
+     ```
+        atabase: cakecove
+        username: fushia
+        password: Password123#@!
+     ```
 
 Created By [Yaser](https://github.com/yasermoamd/) & [Vlad](https://github.com/VladZtn)
