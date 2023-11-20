@@ -9,7 +9,7 @@ if(strlen($query) >= $min_length){
     $query = htmlspecialchars($query); 
     
 
-    $sql = "SELECT * FROM products 
+    $sql = "SELECT * FROM cake 
     WHERE (`name` LIKE '%".$query."%') OR (`description` LIKE '%".$query."%')";
     $raw_results = $conn->query($sql);
 

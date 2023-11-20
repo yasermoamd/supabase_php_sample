@@ -1,9 +1,9 @@
 <?php 
 
 $host = 'localhost';  // DB HOST
-$dbname = 'cakecove';  // DBNAME
-$username = 'fushia'; // DBUSERNAME
-$password = 'Password123#@!'; // DBPASSWORD  
+$dbname = 'bakery';  // DBNAME
+$username = 'root'; // DBUSERNAME
+$password = '123'; // DBPASSWORD  
 
 /**
  *  connection using mysqli -> php

@@ -17,7 +17,7 @@ require_once '../vendor/autoload.php';
 include ('services/connection.php');
 include('views/navbar.php');
 
- $sql = "SELECT productID, name, description, price,  image FROM products";
+ $sql = "SELECT productID, name, description, price,  image FROM cake";
  $result = $conn->query($sql);
 
  if ($result !== false && $result->num_rows > 0) {
